@@ -25,10 +25,17 @@ res11
 round(yi,2) #para redondear un vector a n decimales
 
 plot(x,y)
-recta=lm(y~x)
-abline(recta)
+mod=lm(y~x)
+abline(mod)
 
 
 sse = sum(residuo^2)
 s2 = sse/18
 s2 #desviación estandar
+
+s = ((sum(y))^2)/length(y)
+sc = sum(y^2)
+sst = sc-s
+
+r = 1-(sse/sst)
+summary(mod)
